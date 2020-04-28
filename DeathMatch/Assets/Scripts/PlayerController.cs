@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
         holdingWeapon = false;
         canPickUp = false;
         hand = this.transform.GetChild(0).GetChild(0);
-
     }
 
     // Update is called once per frame
