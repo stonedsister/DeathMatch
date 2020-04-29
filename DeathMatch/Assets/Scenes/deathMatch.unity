@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 610246765}
   m_Layer: 0
   m_Name: WeaponMitGO
-  m_TagString: Untagged
+  m_TagString: weaponmit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +271,9 @@ MonoBehaviour:
   mit: {fileID: 0}
   pickedUp: 0
   mitWeaponized: 0
+  players: {fileID: 705756775}
+  heldWeaponAsChild: {fileID: 0}
+  heldWeapon: {fileID: 0}
 --- !u!135 &610246766
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1107,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
