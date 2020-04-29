@@ -17,6 +17,7 @@ TagManager:
   - enemy
   - weaponmit
   - player
+  - proximity
   layers:
   - Default
   - TransparentFX
