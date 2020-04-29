@@ -8,7 +8,6 @@ public class WeaponSpawner : MonoBehaviour
     public List<GameObject> rifles;
     public WeaponMitScr check;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnRifle());
@@ -30,7 +29,6 @@ public class WeaponSpawner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
