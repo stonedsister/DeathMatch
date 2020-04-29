@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I have ran into something");
         if( other.gameObject.CompareTag("earth") ||
             other.gameObject.CompareTag("wind") ||
             other.gameObject.CompareTag("water") ||
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void PickUp(){
-        Debug.Log("WEAPONS!!!");
         lastTouchedWeapon.transform.SetParent(hand);
         lastTouchedWeapon.transform.localPosition = Vector3.zero;
         lastTouchedWeapon.transform.localRotation = Quaternion.identity;

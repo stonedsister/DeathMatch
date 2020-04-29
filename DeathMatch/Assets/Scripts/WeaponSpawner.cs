@@ -22,14 +22,9 @@ public class WeaponSpawner : MonoBehaviour
             newGun.name = weaponNames[Random.Range(0, weaponNames.Count)];
             yield return new WaitForSeconds(3f);            
             
-            Debug.Log("Before if");
             if(check.mitWeaponized == true)
             {
                 Destroy(newGun);
-                Debug.Log("New gun destroyed");
-            }
-            else{
-                Debug.Log("IN else");
             }
             check.mitWeaponized = false;
         }
