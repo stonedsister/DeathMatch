@@ -28,8 +28,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Debug.Log($"lastInMit = {lastInMit}");
-        Debug.Log($"heldWeapon = {heldWeapon}");
+        Debug.Log($"Heldweapon = {heldWeapon}");
         if(canPickUp && Input.GetKeyDown(KeyCode.Q))
         {
             if(holdingWeapon != true)

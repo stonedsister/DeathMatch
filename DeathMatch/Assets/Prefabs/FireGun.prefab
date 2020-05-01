@@ -109,7 +109,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65962218515909150
 BoxCollider:
@@ -139,6 +139,8 @@ MonoBehaviour:
   bulletPreFab: {fileID: 4977271530489489513, guid: 29d8ac94b5a41624e9af638402ada838,
     type: 3}
   bulletSpawn: {fileID: 3573756784580886041}
+  weaponCheck: {fileID: 2675941980506405314, guid: 3c5b33ad457fe41feb223f75fefe74a3,
+    type: 3}
 --- !u!1 &2038344992282121946
 GameObject:
   m_ObjectHideFlags: 0
