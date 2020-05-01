@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool canPickUp;
     private GameObject player;
-    private int health;
-    private Transform hand;
     public GameObject lastInMit;
-    public bool holdingWeapon;
     public GameObject heldWeapon;
-    // Start is called before the first frame update
+    
+    public bool canPickUp;
+    public bool holdingWeapon;
+
+    private int health;
+    
+    private Transform hand;
+    
+    
     void Start()
     {
         health = 5;
@@ -21,14 +25,23 @@ public class PlayerController : MonoBehaviour
         hand = this.transform.GetChild(0).GetChild(0);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         Debug.Log($"lastInMit = {lastInMit}");
         Debug.Log($"heldWeapon = {heldWeapon}");
         if(canPickUp && Input.GetKeyDown(KeyCode.Q))
         {
-            PickUp();
+            if(holdingWeapon != true)
+            {
+                PickUp();
+            }
+            else
+            {
+                Destroy(heldWeapon);
+                PickUp();
+            }
+            
         }
         
         if(holdingWeapon && Input.GetKeyDown(KeyCode.E))

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6558236580894224181}
   - component: {fileID: 3385184213051075995}
   - component: {fileID: 65832686297958572}
+  - component: {fileID: 4879243832940583261}
   m_Layer: 0
   m_Name: WindGun
   m_TagString: wind
@@ -123,6 +124,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4879243832940583261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712251427974067646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14849d715aa9540f5bf880f28ed3ea83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPreFab: {fileID: 4977271530489489513, guid: 29d8ac94b5a41624e9af638402ada838,
+    type: 3}
+  bulletSpawn: {fileID: 6021002061507169132}
 --- !u!1 &7821728756016957084
 GameObject:
   m_ObjectHideFlags: 0
