@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     private int health;
     
     private Transform hand;
+
+    private Rigidbody heldWeaponRB;
+
+    private Color weaponColor;
     
     
     void Start()
@@ -28,7 +32,6 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Debug.Log($"Heldweapon = {heldWeapon}");
         if(canPickUp && Input.GetKeyDown(KeyCode.Q))
         {
             if(holdingWeapon != true)
@@ -64,6 +67,10 @@ public class PlayerController : MonoBehaviour
         lastInMit.transform.localPosition = Vector3.zero;
         lastInMit.transform.localRotation = Quaternion.identity;
         holdingWeapon = true;
+
+        heldWeaponRB = heldWeapon.GetComponent<Rigidbody>();
+        heldWeaponRB.constraints = RigidbodyConstraints.FreezeAll;
+        weaponColor = heldWeapon.GetComponent<Material>().color;
     }
 
     void Drop(){

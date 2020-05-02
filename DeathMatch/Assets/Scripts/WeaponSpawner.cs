@@ -13,8 +13,6 @@ public class WeaponSpawner : MonoBehaviour
         StartCoroutine(SpawnRifle());
     }
 
-    
-
     IEnumerator SpawnRifle(){
         while(true){
             GameObject newGun = Instantiate(rifles[Random.Range(0, rifles.Count)], this.transform.position, this.transform.rotation);
@@ -27,11 +25,6 @@ public class WeaponSpawner : MonoBehaviour
             }
             check.mitWeaponized = false;
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
 

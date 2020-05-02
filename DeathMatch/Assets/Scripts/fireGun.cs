@@ -7,10 +7,12 @@ public class fireGun : MonoBehaviour
     public Rigidbody bulletPreFab;
     public Transform bulletSpawn;
     public PlayerController weaponCheck;
+    public int ammoCount;
 
 
     void Start()
     {
+        ammoCount = 15;
         weaponCheck = FindObjectOfType<PlayerController>();
         bulletSpawn = this.GetComponent<Transform>().GetChild(0);
     }
@@ -22,15 +24,17 @@ public class fireGun : MonoBehaviour
         Debug.Log(weaponCheck.lastInMit);
         if(Input.GetMouseButtonDown(0) && this.gameObject == weaponCheck.heldWeapon)
         {
-            Debug.Log("Shoot called");
-            Shoot();
+            if(ammoCount > 0)
+            {
+                Shoot();
+            }
         }
-        
     }
 
     void Shoot()
     {
         Rigidbody bullet = Instantiate(bulletPreFab, bulletSpawn.position, bulletSpawn.rotation);
-        bullet.AddRelativeForce(Vector3.forward * 50f, ForceMode.Impulse);   
+        bullet.AddRelativeForce(Vector3.forward * 50f, ForceMode.Impulse);
+        ammoCount -= 1;
     }
 }
