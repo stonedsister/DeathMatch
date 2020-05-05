@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
     private Transform hand;
 
     private Rigidbody heldWeaponRB;
-
-    private Color weaponColor;
     
     
     void Start()
@@ -70,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
         heldWeaponRB = heldWeapon.GetComponent<Rigidbody>();
         heldWeaponRB.constraints = RigidbodyConstraints.FreezeAll;
-        weaponColor = heldWeapon.GetComponent<Material>().color;
     }
 
     void Drop(){

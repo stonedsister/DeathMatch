@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 498}
   m_MaxSize: {x: 22012, y: 14048}
   vertical: 0
-  controlID: 11291
+  controlID: 13613
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 11247
+  controlID: 13639
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,18 +191,18 @@ MonoBehaviour:
       m_ExpandedIDs: 96ecffffdefbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: EnemySpawn (2)
-        m_OriginalName: EnemySpawn (2)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -91338
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -276,19 +276,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Materials/gradient
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Materials/gradient
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/connieluty/Desktop/DeathMatch/DeathMatch
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c0a0000
-    m_LastClickedID: 2604
+    m_SelectedIDs: 48370000
+    m_LastClickedID: 14152
     m_ExpandedIDs: 00000000080a0000640a0000a80b00009a2b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5690feff
-    m_LastClickedInstanceID: -94122
+    m_SelectedInstanceIDs: b60d0000
+    m_LastClickedInstanceID: 3510
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 448}
   m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
-  controlID: 11292
+  controlID: 13614
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 27.646862, y: 38.04497, z: -34.569183}
+    m_Target: {x: 37.81877, y: 39.203342, z: -29.858704}
     speed: 2
-    m_Value: {x: 27.646862, y: 38.04497, z: -34.569183}
+    m_Value: {x: 37.81877, y: 39.203342, z: -29.858704}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,9 +577,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.13214186, y: -0.1992852, z: 0.02713102, w: 0.97061217}
   m_Size:
-    m_Target: 12.388464
+    m_Target: 89.22058
     speed: 2
-    m_Value: 12.388464
+    m_Value: 89.22058
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 11293
+  controlID: 13709
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52

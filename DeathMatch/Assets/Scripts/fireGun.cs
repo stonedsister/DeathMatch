@@ -8,6 +8,7 @@ public class fireGun : MonoBehaviour
     public Transform bulletSpawn;
     public PlayerController weaponCheck;
     public int ammoCount;
+    public Rigidbody bullet;
 
 
     void Start()
@@ -17,11 +18,8 @@ public class fireGun : MonoBehaviour
         bulletSpawn = this.GetComponent<Transform>().GetChild(0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{weaponCheck.heldWeapon}");
-        Debug.Log(weaponCheck.lastInMit);
         if(Input.GetMouseButtonDown(0) && this.gameObject == weaponCheck.heldWeapon)
         {
             if(ammoCount > 0)
@@ -33,8 +31,10 @@ public class fireGun : MonoBehaviour
 
     void Shoot()
     {
-        Rigidbody bullet = Instantiate(bulletPreFab, bulletSpawn.position, bulletSpawn.rotation);
+        bullet = Instantiate(bulletPreFab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.AddRelativeForce(Vector3.forward * 50f, ForceMode.Impulse);
         ammoCount -= 1;
     }
+
+    
 }

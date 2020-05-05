@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class MoveTo : MonoBehaviour{
 
-    //[Tooltip("Add the player here")]
+    [Tooltip("Add the player here")]
     public Transform goal;
     private NavMeshAgent agent;
     public float followDistance = 10f;

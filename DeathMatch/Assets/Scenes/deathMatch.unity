@@ -148,14 +148,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 3223461624208422826, guid: 8bd87d1103d9b410ca25b7942379d07a, type: 3}
-  - {fileID: 3223461624208422826, guid: 8bd87d1103d9b410ca25b7942379d07a, type: 3}
-  - {fileID: 3223461624208422826, guid: 8bd87d1103d9b410ca25b7942379d07a, type: 3}
-  - {fileID: 3223461624208422826, guid: 8bd87d1103d9b410ca25b7942379d07a, type: 3}
+  - {fileID: 1510129863}
+  - {fileID: 1510129863}
+  - {fileID: 1510129863}
+  - {fileID: 1510129863}
   spawnPoints:
   - {fileID: 1195303473}
   - {fileID: 2108138416}
   - {fileID: 503601414}
+  gradients:
+  - {fileID: 2100000, guid: de7427b4612c045fbb99ca0df77b3147, type: 2}
+  - {fileID: 2100000, guid: abd8505cde46b4e18897167c87a3ccb5, type: 2}
+  - {fileID: 2100000, guid: 09e5956b04b0747ed824668d4c48f4e0, type: 2}
+  - {fileID: 2100000, guid: ce20a0280badc4772a33e9662bc8628c, type: 2}
+  - {fileID: 2100000, guid: 5eafc9ee717d84899b2682c000e7b9b2, type: 2}
+  - {fileID: 2100000, guid: 5e3586f4861c94bd4ba7d21a99d7b746, type: 2}
+  currentMaterial: {fileID: 0}
 --- !u!4 &168849408
 Transform:
   m_ObjectHideFlags: 0
@@ -1210,6 +1218,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1510129863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223461624208422826, guid: 8bd87d1103d9b410ca25b7942379d07a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1965785209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1665141023
 GameObject:
   m_ObjectHideFlags: 0
