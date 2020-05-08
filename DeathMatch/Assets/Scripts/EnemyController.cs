@@ -26,8 +26,6 @@ public class EnemyController : MonoBehaviour
     
     void Update()
     {
-        CheckResistance();
-
         if(enemyHealth <= 0)
         {
             Destroy(this.gameObject);
@@ -36,6 +34,7 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        CheckResistance();
         if(other.gameObject.CompareTag("Bullet"))
         {
             if(resistant == false)
@@ -48,18 +47,16 @@ public class EnemyController : MonoBehaviour
 
     void CheckResistance()
     {
-        if(playerConRef.heldWeapon != null)
+        heldWpn = playerConRef.heldWeapon;
+        heldWeaponTag = heldWpn.tag;
+        result = enemMaterial.IndexOf(heldWeaponTag, 0, enemMaterial.Length);
+        Debug.Log($"result = {result}");
+        if(result == -1)
         {
-            heldWpn = playerConRef.heldWeapon;
-            heldWeaponTag = heldWpn.tag;
-            result = enemMaterial.IndexOf(heldWeaponTag, 0, enemMaterial.Length);
-            if(result != -1)
-            {
-                resistant = false;
-            }
-            else{
-                resistant = true;
-            }
+            resistant = true;
+        }
+        else{
+            resistant = false;
         }
     }
 }
