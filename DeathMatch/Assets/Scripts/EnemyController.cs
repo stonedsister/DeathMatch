@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
         enemySpawnRef = FindObjectOfType<EnemySpawn>();
         enemyHealth = 2;
         enemMaterial = enemySpawnRef.enemyMaterialName;
+        this.gameObject.tag = "enemy";
     }
 
     
@@ -47,16 +48,20 @@ public class EnemyController : MonoBehaviour
 
     void CheckResistance()
     {
-        heldWpn = playerConRef.heldWeapon;
-        heldWeaponTag = heldWpn.tag;
-        result = enemMaterial.IndexOf(heldWeaponTag, 0, enemMaterial.Length);
-        Debug.Log($"result = {result}");
-        if(result == -1)
+        if(playerConRef.heldWeapon != null)
         {
-            resistant = true;
+            heldWpn = playerConRef.heldWeapon;
+            heldWeaponTag = heldWpn.tag;
+            result = enemMaterial.IndexOf(heldWeaponTag, 0, enemMaterial.Length);
+            Debug.Log($"result = {result}");
+            if(result == -1)
+            {
+                resistant = true;
+            }
+            else{
+                resistant = false;
+            }
         }
-        else{
-            resistant = false;
-        }
+        
     }
 }

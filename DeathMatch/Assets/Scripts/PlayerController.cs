@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
         {
             Drop();
         }
+
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -55,6 +60,12 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("proximity"))
         {
             canPickUp = true;
+        }
+
+        if(other.gameObject.CompareTag("enemy"))
+        {
+            health -= 1;
+            Debug.Log($"health = {health}");
         }
     }
 

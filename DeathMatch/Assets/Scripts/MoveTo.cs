@@ -8,10 +8,11 @@ public class MoveTo : MonoBehaviour{
     [Tooltip("Add the player here")]
     public Transform goal;
     private NavMeshAgent agent;
-    public float followDistance = 10f;
+    public float followDistance = 0;
        
     void Start () {
         agent = GetComponent<NavMeshAgent>();
+        followDistance = 0;
     }
 
     void Update(){
