@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Destroy(this.gameObject);
+            playerConRef.score += 10;
         }
     }
 
@@ -41,6 +42,7 @@ public class EnemyController : MonoBehaviour
             if(resistant == false)
             {
                 enemyHealth -= 1;
+                playerConRef.score += 10;
             }
             Destroy(other.gameObject);
         }
@@ -53,7 +55,6 @@ public class EnemyController : MonoBehaviour
             heldWpn = playerConRef.heldWeapon;
             heldWeaponTag = heldWpn.tag;
             result = enemMaterial.IndexOf(heldWeaponTag, 0, enemMaterial.Length);
-            Debug.Log($"result = {result}");
             if(result == -1)
             {
                 resistant = true;

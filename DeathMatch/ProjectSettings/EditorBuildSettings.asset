@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/BLHookScene.unity
-    guid: e87b67afa61abf04788072355c90ee47
+    path: Assets/Scenes/Menu.unity
+    guid: 07b58ba033eca40bc80b4ed5d4741d5f
+  - enabled: 1
+    path: Assets/Scenes/deathMatch.unity
+    guid: b36f3565199a54effb49200f7802440e
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 1dc383b5a2b11485f84b0d459de53955
   m_configObjects: {}

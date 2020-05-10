@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     private GameObject player;
     public GameObject lastInMit;
     public GameObject heldWeapon;
+    public GameObject pausedCan;
     
     public bool canPickUp;
     public bool holdingWeapon;
+    public bool paused;
 
     private int health;
+    public int score;
     
     private Transform hand;
 
     private Rigidbody heldWeaponRB;
+
+    public TextMeshProUGUI scoreTMP;
+    public TextMeshProUGUI healthTMP;
     
     
     void Start()
@@ -25,12 +32,18 @@ public class PlayerController : MonoBehaviour
         holdingWeapon = false;
         canPickUp = false;
         hand = this.transform.GetChild(0).GetChild(0);
+        paused = true;
+        score = 0;
+        pausedCan.gameObject.SetActive(false);
+        
     }
 
     
     void Update()
     {
-        if(canPickUp && Input.GetKeyDown(KeyCode.Q))
+        scoreTMP.text = $"{score}";
+        healthTMP.text = $"Health -> {health}";
+        if(canPickUp && Input.GetMouseButtonDown(1))
         {
             if(holdingWeapon != true)
             {
@@ -41,7 +54,12 @@ public class PlayerController : MonoBehaviour
                 Destroy(heldWeapon);
                 PickUp();
             }
-            
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Paused();
+            paused = !paused;
         }
         
         if(holdingWeapon && Input.GetKeyDown(KeyCode.E))
@@ -65,7 +83,6 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("enemy"))
         {
             health -= 1;
-            Debug.Log($"health = {health}");
         }
     }
 
@@ -91,6 +108,19 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("proximity"))
         {
             canPickUp = false;
+        }
+    }
+
+    void Paused()
+    {
+        if(paused)
+        {
+            Time.timeScale = 0;
+            pausedCan.gameObject.SetActive(true);
+        }
+        else{
+            Time.timeScale = 1;
+            pausedCan.gameObject.SetActive(false);
         }
     }
 }
