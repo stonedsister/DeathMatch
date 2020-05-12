@@ -36,9 +36,9 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        CheckResistance();
         if(other.gameObject.CompareTag("Bullet"))
         {
+            CheckResistance();
             if(resistant == false)
             {
                 enemyHealth -= 1;

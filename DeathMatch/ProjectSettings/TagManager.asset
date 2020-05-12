@@ -18,6 +18,8 @@ TagManager:
   - weaponmit
   - player
   - proximity
+  - ear
+  - ear1
   layers:
   - Default
   - TransparentFX

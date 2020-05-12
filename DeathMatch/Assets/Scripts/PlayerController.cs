@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI healthTMP;
+    public TextMeshProUGUI ammoTMP;
+
+    public fireGun fireGunRef;
     
     
     void Start()
@@ -35,7 +38,6 @@ public class PlayerController : MonoBehaviour
         paused = true;
         score = 0;
         pausedCan.gameObject.SetActive(false);
-        
     }
 
     
@@ -43,6 +45,16 @@ public class PlayerController : MonoBehaviour
     {
         scoreTMP.text = $"{score}";
         healthTMP.text = $"Health -> {health}";
+
+        if(holdingWeapon)
+        {
+            ammoTMP.text = $"Ammo = {fireGunRef.ammoCount}";
+        }
+        else
+        {
+            ammoTMP.text = $"Ammo = 0";
+        }
+
         if(canPickUp && Input.GetMouseButtonDown(1))
         {
             if(holdingWeapon != true)
@@ -88,6 +100,7 @@ public class PlayerController : MonoBehaviour
 
     void PickUp()
     {
+        fireGunRef = FindObjectOfType<fireGun>();
         heldWeapon = lastInMit;
         lastInMit.transform.SetParent(hand);
         lastInMit.transform.localPosition = Vector3.zero;
@@ -117,6 +130,8 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 0;
             pausedCan.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else{
             Time.timeScale = 1;

@@ -9,10 +9,13 @@ public class MoveTo : MonoBehaviour{
     public Transform goal;
     private NavMeshAgent agent;
     public float followDistance = 0;
+    public GameObject player;
        
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         followDistance = 0;
+        player = GameObject.Find("FPSController");
+        goal = player.transform;
     }
 
     void Update(){

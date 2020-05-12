@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public List<GameObject> enemies;
+    public GameObject enemies;
     public List<GameObject> spawnPoints;
     public List<Material> gradients;
+    public List<Material> earColors;
     public Material currentMaterial;
     public string enemyMaterialName;
+    public GameObject enemyEar;
+    public GameObject enemyEar1;
 
     void Start()
     {
@@ -19,10 +22,22 @@ public class EnemySpawn : MonoBehaviour
     {
         while(true)
         {
-            GameObject spawnedEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, this.transform.rotation);
+            GameObject spawnedEnemy = Instantiate(enemies, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, this.transform.rotation);
+            enemyEar = spawnedEnemy.transform.GetChild(0).gameObject;
+            enemyEar1 = spawnedEnemy.transform.GetChild(1).gameObject;
+            do
+            {
+                enemyEar1.GetComponent<Renderer>().material = earColors[Random.Range(0, earColors.Count)];
+            }while(enemyEar1.GetComponent<Renderer>().material == enemyEar.GetComponent<Renderer>().material);
+            
             spawnedEnemy.GetComponent<Renderer>().material = gradients[Random.Range(0, gradients.Count)];
             currentMaterial = spawnedEnemy.GetComponent<Renderer>().material;
             enemyMaterialName = spawnedEnemy.GetComponent<Renderer>().material.name;
+            enemyEar.GetComponent<Renderer>().material = earColors[Random.Range(0, earColors.Count)];
+            
+            
+
+ 
 
             spawnedEnemy.AddComponent<EnemyController>();
             yield return new WaitForSeconds(3f);
